@@ -1,0 +1,18 @@
+package ${PACKAGE};
+
+import com.hypixel.hytale.server.core.plugin.JavaPlugin;
+import com.hypixel.hytale.server.core.plugin.JavaPluginInit;
+
+import javax.annotation.Nonnull;
+
+public class ${CLASS_NAME} extends JavaPlugin {
+
+    public ${CLASS_NAME}(@Nonnull JavaPluginInit init) {
+        super(init);
+    }
+
+    @Override
+    protected void setup() {
+        getLogger().atInfo().log("Hello from ${CLASS_NAME}!");
+    }
+}

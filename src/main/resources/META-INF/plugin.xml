@@ -5,11 +5,18 @@
     <vendor>oskarscot</vendor>
 
     <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.lang</depends>
+    <depends>com.intellij.java</depends>
+    <depends>org.jetbrains.plugins.gradle</depends>
 
     <resource-bundle>messages.HytaleDevelopment</resource-bundle>
 
     <extensions defaultExtensionNs="com.intellij">
-        <toolWindow factoryClass="scot.oskar.hytaledevelopment.toolWindow.MyToolWindowFactory" id="MyToolWindow"/>
-        <postStartupActivity implementation="scot.oskar.hytaledevelopment.startup.MyProjectActivity" />
+        <newProjectWizard.generator implementation="scot.oskar.hytaledevelopment.project.HytaleProjectGenerator"/>
+        <internalFileTemplate name="HytaleBuildGradleKts"/>
+        <internalFileTemplate name="HytaleSettingsGradleKts"/>
+        <internalFileTemplate name="HytaleGradleProperties"/>
+        <internalFileTemplate name="HytaleGitignore"/>
+        <internalFileTemplate name="HytaleMainClass"/>
     </extensions>
 </idea-plugin>

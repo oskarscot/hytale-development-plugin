@@ -9,9 +9,10 @@ import scot.oskar.hytaledevelopment.util.VersionChecker
 class VersionCheckerTests {
 
     @Test
-    fun `should return pre-release versions`() = runBlocking {
+    fun `should return release versions`() = runBlocking {
         val versionChecker = VersionChecker()
         val fetchVersions = versionChecker.fetchVersions(HytalePatchline.RELEASE)
+        println(fetchVersions.getOrNull())
         assertTrue(fetchVersions.isSuccess)
     }
 }

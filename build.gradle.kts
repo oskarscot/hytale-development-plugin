@@ -65,6 +65,10 @@ intellijPlatform {
             }
         }
     }
+
+    publishing {
+        token = providers.environmentVariable("PUBLISH_TOKEN")
+    }
 }
 
 changelog {

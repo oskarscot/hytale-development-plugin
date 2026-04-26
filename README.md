@@ -17,7 +17,7 @@ Project scaffolding, build setup, and editor support for writing Hytale server p
 
 ## Installation
 
-**From the marketplace**: <kbd>Settings</kbd> → <kbd>Plugins</kbd> → <kbd>Marketplace</kbd>, search "Hytale Development", install.
+**From the marketplace**: <kbd>Settings</kbd> → <kbd>Plugins</kbd> → <kbd>Marketplace</kbd>, search "Hytale Plugin Development", install.
 Or open [the listing](https://plugins.jetbrains.com/plugin/MARKETPLACE_ID) directly.
 
 **From a release**: grab the zip from [releases](https://github.com/oskarscot/hytale-development-plugin/releases/latest) and use <kbd>Settings</kbd> → <kbd>Plugins</kbd> → <kbd>⚙️</kbd> → <kbd>Install plugin from disk</kbd>.

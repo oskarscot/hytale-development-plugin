@@ -10,8 +10,8 @@ import com.intellij.ide.wizard.RootNewProjectWizardStep
 import org.jetbrains.annotations.Nls
 import scot.oskar.hytaledevelopment.HytaleDevelopmentBundle
 import scot.oskar.hytaledevelopment.HytaleIcons.Hytale
-import scot.oskar.hytaledevelopment.project.step.HytaleAssetsStep
 import scot.oskar.hytaledevelopment.project.step.HytaleConfigStep
+import scot.oskar.hytaledevelopment.project.step.HytaleLanguageStep
 import javax.swing.Icon
 
 class HytaleProjectGenerator : GeneratorNewProjectWizard {
@@ -25,5 +25,5 @@ class HytaleProjectGenerator : GeneratorNewProjectWizard {
             .nextStep(::NewProjectWizardBaseStep)
             .nextStep(::GitNewProjectWizardStep)
             .nextStep(::HytaleConfigStep)
-            .nextStep(::HytaleAssetsStep)
+            .nextStep(::HytaleLanguageStep)
 }

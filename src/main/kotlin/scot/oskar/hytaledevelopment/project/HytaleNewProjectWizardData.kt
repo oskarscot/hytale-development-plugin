@@ -16,6 +16,14 @@ interface HytaleNewProjectWizardData {
 
         val NewProjectWizardStep.hytaleData: HytaleNewProjectWizardData?
             get() = data.getUserData(KEY)
+
+        val HytaleNewProjectWizardData.mainClassName: String
+            get() = pluginName.split(Regex("[^A-Za-z0-9]"))
+                .filter { it.isNotEmpty() }
+                .joinToString("") { it.replaceFirstChar(Char::uppercase) }
+
+        val HytaleNewProjectWizardData.packagePath: String
+            get() = packageName.replace('.', '/')
     }
 
 }

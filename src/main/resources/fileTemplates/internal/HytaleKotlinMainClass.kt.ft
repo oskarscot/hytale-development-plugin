@@ -1,0 +1,11 @@
+package ${PACKAGE}
+
+import com.hypixel.hytale.server.core.plugin.JavaPlugin
+import com.hypixel.hytale.server.core.plugin.JavaPluginInit
+
+class ${CLASS_NAME}(init: JavaPluginInit) : JavaPlugin(init) {
+
+    override fun setup() {
+        logger.atInfo().log("Hello from ${CLASS_NAME}!")
+    }
+}

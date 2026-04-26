@@ -11,12 +11,21 @@
 
     <resource-bundle>messages.HytaleDevelopment</resource-bundle>
 
+    <extensionPoints>
+        <extensionPoint name="language"
+                        interface="scot.oskar.hytaledevelopment.project.HytaleLanguage"
+                        dynamic="true"/>
+    </extensionPoints>
+
     <extensions defaultExtensionNs="com.intellij">
         <newProjectWizard.generator implementation="scot.oskar.hytaledevelopment.project.HytaleProjectGenerator"/>
-        <internalFileTemplate name="HytaleBuildGradleKts"/>
-        <internalFileTemplate name="HytaleSettingsGradleKts"/>
-        <internalFileTemplate name="HytaleGradleProperties"/>
-        <internalFileTemplate name="HytaleGitignore"/>
-        <internalFileTemplate name="HytaleMainClass"/>
+        <internalFileTemplate name="HytaleJavaMainClass"/>
+        <internalFileTemplate name="HytaleKotlinMainClass"/>
+        <internalFileTemplate name="HytaleManifestJson"/>
+    </extensions>
+
+    <extensions defaultExtensionNs="scot.oskar.hytaledevelopment">
+        <language implementation="scot.oskar.hytaledevelopment.project.step.JavaHytaleLanguage"/>
+        <language implementation="scot.oskar.hytaledevelopment.project.step.KotlinHytaleLanguage"/>
     </extensions>
 </idea-plugin>

@@ -1,0 +1,7 @@
+{
+    "Group": "${GROUP}",
+    "Name": "${NAME}",
+    "Version": "0.0.1",
+    "Main": "${MAIN}",
+    "ServerVersion": "${SERVER_VERSION}"
+}

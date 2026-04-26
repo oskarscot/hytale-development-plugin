@@ -1,8 +1,8 @@
 # Hytale Development Plugin
 
 ![Build](https://github.com/oskarscot/hytale-development-plugin/workflows/Build/badge.svg)
-[![Version](https://img.shields.io/jetbrains/plugin/v/MARKETPLACE_ID.svg)](https://plugins.jetbrains.com/plugin/MARKETPLACE_ID)
-[![Downloads](https://img.shields.io/jetbrains/plugin/d/MARKETPLACE_ID.svg)](https://plugins.jetbrains.com/plugin/MARKETPLACE_ID)
+[![Version](https://img.shields.io/jetbrains/plugin/v/MARKETPLACE_ID.svg)](https://plugins.jetbrains.com/plugin/31469-hytale-toolkit)
+[![Downloads](https://img.shields.io/jetbrains/plugin/d/MARKETPLACE_ID.svg)](https://plugins.jetbrains.com/plugin/31469-hytale-toolkit)
 
 <!-- Plugin description -->
 First-hand support for Hytale plugin development in IntelliJ IDEA.
@@ -18,7 +18,7 @@ Project scaffolding, build setup, and editor support for writing Hytale server p
 ## Installation
 
 **From the marketplace**: <kbd>Settings</kbd> → <kbd>Plugins</kbd> → <kbd>Marketplace</kbd>, search "Hytale Plugin Development", install.
-Or open [the listing](https://plugins.jetbrains.com/plugin/MARKETPLACE_ID) directly.
+Or open [the listing](https://plugins.jetbrains.com/plugin/31469-hytale-toolkit) directly.
 
 **From a release**: grab the zip from [releases](https://github.com/oskarscot/hytale-development-plugin/releases/latest) and use <kbd>Settings</kbd> → <kbd>Plugins</kbd> → <kbd>⚙️</kbd> → <kbd>Install plugin from disk</kbd>.
 
@@ -49,9 +49,9 @@ The status bar shows **Hytale Plugin Manifest** as the active schema.
 ## Build
 
 ```sh
-./gradlew buildPlugin     # zip lands in build/distributions/
-./gradlew runIde          # sandbox IDE with the plugin loaded
-./gradlew verifyPlugin    # checks against the targeted IDE range
+./gradlew buildPlugin
+./gradlew runIde
+./gradlew verifyPlugin
 ```
 
 ---

@@ -1,0 +1,83 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Hytale Plugin Manifest",
+    "description": "Manifest for a Hytale server plugin. See https://doctale.dev/getting-started/plugin-manifest/",
+    "type": "object",
+    "required": ["Name"],
+    "additionalProperties": false,
+    "properties": {
+        "Group": {
+            "type": "string",
+            "description": "Organization namespace (e.g., com.mycompany). Combined with Name forms the full identifier 'Group:Name'."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The unique name of your plugin. Required. Combined with Group as 'Group:Name'."
+        },
+        "Version": {
+            "type": "string",
+            "description": "Semantic version (e.g., 1.2.3, 1.0.0-alpha.1).",
+            "pattern": "^\\d+\\.\\d+\\.\\d+(?:-[0-9A-Za-z.-]+)?(?:\\+[0-9A-Za-z.-]+)?$"
+        },
+        "Description": {
+            "type": "string",
+            "description": "Human-readable explanation of plugin functionality."
+        },
+        "Authors": {
+            "type": "array",
+            "description": "Array of author objects. All fields optional.",
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Name": { "type": "string" },
+                    "Email": { "type": "string", "format": "email" },
+                    "Url": { "type": "string", "format": "uri" }
+                }
+            }
+        },
+        "Website": {
+            "type": "string",
+            "format": "uri",
+            "description": "Official website or repository URL."
+        },
+        "Main": {
+            "type": "string",
+            "description": "Fully qualified class name extending JavaPlugin (e.g., com.example.MyPlugin)."
+        },
+        "ServerVersion": {
+            "type": "string",
+            "description": "Target server version. String equality, not range."
+        },
+        "Dependencies": {
+            "type": "object",
+            "description": "Required plugins as 'Group:Name' -> semver range.",
+            "additionalProperties": { "type": "string" }
+        },
+        "OptionalDependencies": {
+            "type": "object",
+            "description": "Optional plugins as 'Group:Name' -> semver range.",
+            "additionalProperties": { "type": "string" }
+        },
+        "LoadBefore": {
+            "type": "object",
+            "description": "Plugins that should load after this one.",
+            "additionalProperties": { "type": "string" }
+        },
+        "DisabledByDefault": {
+            "type": "boolean",
+            "description": "Auto-disable on startup.",
+            "default": false
+        },
+        "IncludesAssetPack": {
+            "type": "boolean",
+            "description": "Plugin JAR contains embedded assets.",
+            "default": false
+        },
+        "SubPlugins": {
+            "type": "array",
+            "description": "Nested plugin manifests inheriting parent values.",
+            "items": { "$ref": "#" }
+        }
+    }
+}

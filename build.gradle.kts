@@ -23,15 +23,22 @@ dependencies {
     testImplementation("junit:junit:4.13.2")
 
     intellijPlatform {
-        intellijIdea("2025.2.6.1")
+        intellijIdea("2026.1.1")
         bundledPlugin("com.intellij.java")
+        bundledPlugin("com.intellij.gradle")
         bundledPlugin("org.jetbrains.plugins.gradle")
+        bundledPlugin("com.intellij.modules.json")
         testFramework(TestFrameworkType.Platform)
     }
 }
 
 intellijPlatform {
     pluginConfiguration {
+        ideaVersion {
+            sinceBuild = providers.gradleProperty("pluginSinceBuild")
+            untilBuild = providers.gradleProperty("pluginUntilBuild")
+        }
+
         // Extract the <!-- Plugin description --> section from README.md and provide for the plugin's manifest
         description = providers.fileContents(layout.projectDirectory.file("README.md")).asText.map {
             val start = "<!-- Plugin description -->"

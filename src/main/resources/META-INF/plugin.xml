@@ -7,7 +7,9 @@
     <depends>com.intellij.modules.platform</depends>
     <depends>com.intellij.modules.lang</depends>
     <depends>com.intellij.java</depends>
+    <depends>com.intellij.gradle</depends>
     <depends>org.jetbrains.plugins.gradle</depends>
+    <depends>com.intellij.modules.json</depends>
 
     <resource-bundle>messages.HytaleDevelopment</resource-bundle>
 
@@ -27,5 +29,9 @@
     <extensions defaultExtensionNs="scot.oskar.hytaledevelopment">
         <language implementation="scot.oskar.hytaledevelopment.project.step.JavaHytaleLanguage"/>
         <language implementation="scot.oskar.hytaledevelopment.project.step.KotlinHytaleLanguage"/>
+    </extensions>
+
+    <extensions defaultExtensionNs="JavaScript.JsonSchema">
+        <ProviderFactory implementation="scot.oskar.hytaledevelopment.schema.HytaleManifestSchemaProviderFactory"/>
     </extensions>
 </idea-plugin>

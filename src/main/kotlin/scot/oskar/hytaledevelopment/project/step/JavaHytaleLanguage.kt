@@ -30,11 +30,7 @@ class JavaHytaleLanguage : HytaleLanguage {
 
             addBuildScript {
                 withJavaPlugin()
-                withJava {
-                    call("toolchain") {
-                        assign("languageVersion", call("JavaLanguageVersion.of", int(25)))
-                    }
-                }
+                withJavaToolchain(25)
                 withMavenCentral()
                 withRepository {
                     call("maven", string("https://maven.hytale.com/$patchline"))
